@@ -1,0 +1,15 @@
+[Unit]
+Description=MERN Todo Backend
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/MERN-Stack-Guide/10-MERN-Todo/backend
+ExecStart=/usr/local/bin/node index.js
+EnvironmentFile=/home/ubuntu/MERN-Stack-Guide/10-MERN-Todo/backend/.env
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
