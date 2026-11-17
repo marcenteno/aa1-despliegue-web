@@ -1,57 +1,53 @@
 # AA1 – Despliegue de Aplicaciones Web
 
-**Ciclo formativo:** 2.º Desarrollo de Aplicaciones Web (DAW)  
-**Curso académico:** 2026/2027
+**Ciclo:** 2.º DAW  
+**Curso:** 2026/2027
+
+## ¿De qué trata este proyecto?
+
+En este repositorio se recoge todo el trabajo realizado para la actividad AA1 de la asignatura Despliegue de Aplicaciones Web.
+
+La actividad está dividida en cuatro fases. En cada una hemos trabajado con diferentes herramientas y servicios de AWS para aprender a desplegar aplicaciones, configurar servidores y comprobar que todo funciona correctamente.
+
+He organizado el repositorio por fases para que sea más fácil encontrar el código, la documentación, los scripts y las capturas de las pruebas que he ido realizando.
+
+## Fases realizadas
+
+### Fase 1 – Despliegue de una aplicación MERN en EC2
+
+En esta primera fase desplegué una aplicación MERN (MongoDB, Express, React y Node.js) en una instancia EC2 de AWS.
+
+Para ello preparé un servidor Ubuntu, instalé las herramientas necesarias, configuré Nginx y conecté la aplicación con MongoDB Atlas. También comprobé que el backend funcionaba correctamente y que los datos se mantenían.
+
+### Fase 2 – Despliegue con Docker Compose
+
+En la segunda fase volví a desplegar la aplicación, pero esta vez utilizando Docker y Docker Compose.
+
+Configuré los diferentes contenedores para que pudieran comunicarse entre ellos y preparé un volumen para mantener los datos aunque se reiniciaran los servicios.
+
+También realicé varias comprobaciones para asegurarme de que la aplicación seguía funcionando correctamente.
+
+### Fase 3 – Publicación de una web con dominio y HTTPS
+
+En esta fase elegí una plantilla web y la publiqué en una instancia EC2 utilizando Nginx.
+
+Después configuré un dominio para acceder a la página, instalé un certificado gratuito de Let's Encrypt mediante Certbot y preparé la redirección automática de HTTP a HTTPS.
+
+Por último, comprobé que la web funcionaba con HTTPS y que la renovación del certificado se podía realizar correctamente.
+
+### Fase 4 – Despliegue de Odoo multirregión
+
+En la última fase trabajé con dos instancias de Odoo desplegadas en diferentes regiones de AWS: Norte de Virginia y Oregón.
+
+Configuré una zona alojada privada en Route 53 y asocié las dos VPC. También preparé los registros DNS con una política de enrutamiento por latencia.
+
+Para terminar, realicé distintas pruebas para comprobar cómo respondía DNS en cada región y qué ocurría cuando una de las instancias dejaba de estar disponible.
 
 ---
 
-## Descripción del proyecto
+## Organización del repositorio
 
-Este repositorio contiene el desarrollo de la actividad **AA1 – Despliegue de Aplicaciones Web**, realizada durante el curso de 2.º DAW.
-
-El proyecto está dividido en cuatro fases prácticas en las que se trabajan diferentes tecnologías y servicios de AWS para desplegar aplicaciones web, configurar infraestructuras y comprobar su funcionamiento.
-
-Cada fase incluye los archivos necesarios, documentación técnica, scripts de configuración y evidencias de las pruebas realizadas.
-
-## Fases del proyecto
-
-### Fase 1. Despliegue tradicional de una aplicación MERN en EC2
-
-Despliegue de una aplicación MERN (MongoDB, Express, React y Node.js) en una instancia EC2 de AWS.
-
-Se trabaja la configuración del servidor Ubuntu, la instalación de Node.js y Nginx, la conexión con MongoDB Atlas y la ejecución del backend como servicio.
-
-**Contenido:** aplicación, documentación, scripts y evidencias.
-
-### Fase 2. Despliegue de una aplicación con Docker Compose
-
-Despliegue de la aplicación mediante contenedores Docker y Docker Compose.
-
-Se configura la comunicación entre los servicios, la persistencia de los datos mediante volúmenes y el reinicio automático de los contenedores.
-
-**Contenido:** archivos de Docker Compose, documentación, código y evidencias.
-
-### Fase 3. Publicación de una web con dominio y HTTPS
-
-Publicación de una plantilla web en una instancia EC2 utilizando Nginx.
-
-Se configura un dominio, su resolución DNS y un certificado digital gratuito de Let's Encrypt mediante Certbot. También se establece la redirección automática de HTTP a HTTPS y se comprueba la renovación del certificado.
-
-**Contenido:** código de la plantilla, configuración de Nginx, documentación y evidencias.
-
-### Fase 4. Despliegue de Odoo multirregión
-
-Despliegue de Odoo en dos regiones de AWS: Norte de Virginia y Oregón.
-
-Se configura una zona alojada privada en Amazon Route 53, asociada a las dos VPC, y una política de enrutamiento por latencia para gestionar el acceso a las instancias.
-
-Se realizan distintas pruebas para comprobar la resolución DNS, el comportamiento de la política y el funcionamiento de los servicios entre ambas regiones.
-
-**Contenido:** documentación, script de configuración y evidencias de las pruebas.
-
----
-
-## Estructura del repositorio
+He separado el trabajo en cuatro carpetas, una para cada fase:
 
 ```text
 aa1-despliegue-web/
@@ -87,30 +83,33 @@ aa1-despliegue-web/
 └── README.md
 ```
 
-## Tecnologías y servicios utilizados
+Dentro de cada carpeta se encuentran los archivos correspondientes a esa fase: código, configuraciones, documentación y capturas de pantalla.
 
-- **Amazon Web Services (AWS):** infraestructura en la nube.
-- **Amazon EC2:** creación y administración de instancias virtuales.
-- **Ubuntu:** sistema operativo de los servidores.
-- **Node.js y Express:** desarrollo y ejecución del backend.
-- **MongoDB Atlas:** almacenamiento de datos de la aplicación MERN.
-- **Nginx:** servidor web y proxy inverso.
-- **Docker y Docker Compose:** contenedorización y despliegue de aplicaciones.
-- **DNS y Amazon Route 53:** configuración y resolución de nombres de dominio.
-- **Let's Encrypt y Certbot:** obtención y renovación de certificados HTTPS.
-- **Odoo:** aplicación desplegada en dos regiones de AWS.
+## Herramientas utilizadas
 
-## Documentación y evidencias
+Durante la actividad he trabajado con las siguientes herramientas y tecnologías:
 
-Cada carpeta de fase contiene los recursos correspondientes al trabajo realizado.
+- **AWS:** para crear y gestionar la infraestructura.
+- **EC2:** para desplegar las máquinas virtuales.
+- **Ubuntu:** como sistema operativo de los servidores.
+- **Node.js y Express:** para ejecutar el backend de la aplicación MERN.
+- **MongoDB Atlas:** para almacenar los datos.
+- **Nginx:** para publicar las aplicaciones web.
+- **Docker y Docker Compose:** para trabajar con contenedores.
+- **Amazon Route 53:** para configurar los registros DNS y el enrutamiento.
+- **Let's Encrypt y Certbot:** para configurar los certificados HTTPS.
+- **Odoo:** para realizar el despliegue multirregión.
 
-- Los archivos README describen los objetivos, la configuración y los procedimientos seguidos.
-- Los documentos de cada fase recogen la documentación técnica.
-- Las carpetas `Evidencias` incluyen capturas de pantalla de las configuraciones y pruebas realizadas.
-- Las carpetas `Scripts` contienen archivos de configuración y automatización utilizados durante el despliegue.
+## Documentación y capturas
 
-## Autoría
+En cada fase he incluido la documentación necesaria para explicar los pasos que he seguido.
 
-Proyecto realizado como parte de la actividad AA1 de la asignatura **Despliegue de Aplicaciones Web**, correspondiente al segundo curso del ciclo formativo de Desarrollo de Aplicaciones Web (DAW).
+También he añadido capturas de pantalla de las configuraciones y de las pruebas realizadas para dejar constancia de que los despliegues funcionan correctamente.
 
-**Curso académico:** 2026/2027.
+Los scripts y archivos de configuración utilizados también están incluidos en sus respectivas carpetas.
+
+---
+
+**Actividad:** AA1 – Despliegue de Aplicaciones Web  
+**Ciclo formativo:** 2.º DAW  
+**Curso académico:** 2026/2027
